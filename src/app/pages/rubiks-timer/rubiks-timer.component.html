@@ -1,0 +1,27 @@
+<div class="h-screen">
+    <div class="h-1/4 flex flex-col items-center justify-center">
+        <p class="text-7xl font-bold px-12">{{ cubeShuffle }}</p>
+    </div>
+    <div class="h-1/2 flex flex-col items-center justify-center bg-[#beeac3]">
+        <!-- <div *ngIf="!time">
+            <img
+                src="assets/images/rubiks-cube.png"
+                alt="A Rubik's cube with the yellow, red and blue sides visible."
+                class="animate-spin animate-infinite animate-duration-[4000ms] hover:animate-duration-1000 hover:cursor-pointer h-[150px] w-[130px]"
+            />
+        </div> -->
+        <h2 *ngIf="!time" class="text-5xl" [ngClass]="beforeStartingStyles">
+            Hold Spacebar to Start
+        </h2>
+        <div *ngIf="time" class="grid grid-cols-8 justify-center text-9xl p-2 place-items-center">
+            <p class="col-span-2">{{ time[0] }}</p>
+            <p>.</p>
+            <p class="col-span-2">{{ time[1] }}</p>
+            <p>.</p>
+            <p class="col-span-2">{{ time[2] }}</p>
+        </div>
+    </div>
+    <div class="h-1/4">
+        <button class="bg-lime-200 py-4 px-8">Open Statistics</button>
+    </div>
+</div>
