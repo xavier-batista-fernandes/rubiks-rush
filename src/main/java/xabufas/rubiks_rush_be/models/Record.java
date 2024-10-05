@@ -8,6 +8,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class Record {
-    private float time;
+    private Double time;
     private String scramble;
 }
