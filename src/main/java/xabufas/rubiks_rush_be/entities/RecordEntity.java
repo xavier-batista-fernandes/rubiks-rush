@@ -16,7 +16,7 @@ import java.util.UUID;
 public class RecordEntity extends Auditable {
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue
     private UUID id;
 
     @Column(name = "TIME", nullable = false)

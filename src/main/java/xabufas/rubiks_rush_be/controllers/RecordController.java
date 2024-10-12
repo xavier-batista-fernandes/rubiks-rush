@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import xabufas.rubiks_rush_be.entities.RecordEntity;
 import xabufas.rubiks_rush_be.models.Record;
 import xabufas.rubiks_rush_be.repositories.RecordRepository;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:5000")
 public class RecordController {
 
     private final RecordRepository recordRepository;
@@ -27,7 +29,7 @@ public class RecordController {
         List<RecordEntity> entities = recordRepository.findAll();
         List<Record> records = entities.stream().map(record -> new Record(record.getTime(), record.getScramble())).toList();
 
-        return ResponseEntity.ok(records);
+        return new ResponseEntity<>(records, HttpStatus.OK);
     }
 
     @PostMapping("/records")
