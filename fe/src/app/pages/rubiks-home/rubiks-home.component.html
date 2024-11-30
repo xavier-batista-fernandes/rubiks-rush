@@ -1,0 +1,15 @@
+<div class="h-screen flex flex-col items-center justify-center">
+    <h3 class="font-extralight mb-4">Buy first a Rubik's cube to use this page.</h3>
+    <h1 class="text-9xl w-2/3 text-center font-bold uppercase mb-4">Rubik's Rush</h1>
+    <h3 class="max-w-[90%] text-2xl font-thin">Test how fast you can solve a Rubik's cube.</h3>
+    <h3 class="max-w-[90%] text-2xl font-thin mb-8">
+        We provide the shuffles and we'll give you a clock.
+    </h3>
+    <span class="text-4xl font-semibold mb-12"> The rest is up to you. </span>
+    <img
+        [routerLink]="['timer']"
+        src="assets/images/rubiks-cube.png"
+        alt="A Rubik's cube with the yellow, red and blue sides visible."
+        class="animate-spin animate-infinite animate-duration-[4000ms] hover:animate-duration-1000 hover:cursor-pointer h-[150px] w-[130px]"
+    />
+</div>
